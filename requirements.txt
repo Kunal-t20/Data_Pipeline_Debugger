@@ -1,0 +1,7 @@
+pyyaml
+pytest
+pandas 
+python-dotenv
+numpy
+fastapi
+uvicorn
