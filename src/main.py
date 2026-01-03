@@ -10,7 +10,7 @@ def main():
     print(event)
 
     category=classify_error(event)
-    print("Category:",category)
+    print(f"Category : {category}")
     
 
 
