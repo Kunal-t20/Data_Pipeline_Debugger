@@ -5,3 +5,6 @@ python-dotenv
 numpy
 fastapi
 uvicorn
+sentence-transformers
+faiss-cpu
+torch

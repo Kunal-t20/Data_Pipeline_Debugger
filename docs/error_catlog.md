@@ -1,25 +1,16 @@
-Error Catalog — Machine Learning Pipeline Debugger
-
-In a machine learning pipeline, errors usually occur when the data shape or content does not match what the model was trained to handle.
-
-This catalog explains five common error categories in simple language.
-
-
-
-1️⃣ SchemaMismatch
+1. SchemaMismatch
 What it is
 
-The structure of the data is different from what the pipeline expects (for example, column names or data types do not match).
+The structure of the data is different from what the pipeline expects
+(for example, column names or data types do not match).
 
 Why it happens
 
-Column renamed
-e.g., User_ID → ID
+Column renamed (e.g., User_ID → ID)
 
-Data type changed
-e.g., numeric Price becomes text "Contact for Price"
+Data type changed (e.g., numeric Price becomes "Contact for Price")
 
-Extra / unexpected columns added
+Extra or unexpected columns added
 
 Impact
 
@@ -43,18 +34,16 @@ Fail early when schema changes
 
 Add validation tests
 
-
-
-2️⃣ MissingColumn
+2. MissingColumn
 What it is
 
-A required feature/column is completely missing.
+A required feature or column is completely missing.
 
 Why it happens
 
 Dropped during preprocessing
 
-API / database did not send it
+API or database did not send it
 
 Developer forgot to extract it
 
@@ -70,9 +59,7 @@ Automatic checks for required features
 
 Schema validation before inference
 
-
-
-3️⃣ DataQuality
+3. DataQuality
 What it is
 
 The pipeline runs, but the data is invalid or unreliable.
@@ -105,9 +92,7 @@ Add validation rules
 
 Track data distributions
 
-
-
-4️⃣ ShapeMismatch
+4. ShapeMismatch
 What it is
 
 The size (shape) of the data does not match what the model expects.
@@ -132,59 +117,142 @@ Shape checks in preprocessing
 
 Unit tests for input format
 
-
-
-5️⃣ InferenceFailure
+5. ResourceLimit
 What it is
 
-Prediction fails during the final inference step.
+The system runs out of compute or memory.
 
-Why it happens
+Common examples
 
-Out of memory
+CUDA Out-of-Memory (GPU)
 
-Timeout
+RAM exhausted
 
-Unseen input / unexpected values
+Disk quota exceeded
 
-Serialization failure
+Process killed by OS
+
+Impact
+
+Training or inference stops mid-run
 
 Fix
 
-Handle unknown inputs
+Reduce batch size
 
-Improve resource allocation
+Use a smaller model
 
-Add retry or fallback logic
+Enable mixed precision
+
+Increase resources
 
 Prevention
 
-Production inference checks
+Resource monitoring
 
-Model validation before deployment
+Memory-efficient pipelines
 
-Monitoring & alerts
+6. TrainingInstability
+What it is
 
+Training runs, but becomes unstable.
 
+Common signals
 
-# summary:
+Loss becomes NaN
 
-| Error Type       | Meaning                         |
-| ---------------- | ------------------------------- |
-| SchemaMismatch   | Data structure changed          |
-| MissingColumn    | Required field missing          |
-| DataQuality      | Data is messy or invalid        |
-| ShapeMismatch    | Data size doesn’t match         |
-| InferenceFailure | Model crashes during prediction |
+Exploding gradients
 
+Diverging metrics
 
+Fix
 
-### Philosophy
+Reduce learning rate
 
-> **Rules decide.  
-RAG only explains.**
+Clip gradients
+
+Normalize inputs
+
+Check labels
+
+Prevention
+
+Training sanity checks
+
+Early alerts on drift
+
+7. ConvergenceFailure
+What it is
+
+The model never converges to a useful state.
+
+Why it happens
+
+Bad hyperparameters
+
+Poor initialization
+
+Wrong optimizer
+
+Incorrect feature scaling
+
+Fix
+
+Tune learning rate or batch size
+
+Improve feature normalization
+
+Try alternate optimizers
+
+Prevention
+
+Baseline models
+
+Training experiment discipline
+
+8. Unknown
+What it is
+
+The system cannot confidently classify the error.
+
+Why it happens
+
+New or unusual failure
+
+Incomplete logs
+
+Weak signal
+
+Behavior
+
+The system prefers to stay honest
+instead of guessing incorrectly.
+
+Fix
+
+Review logs manually
+
+Improve rules later
+
+Summary
+Error Type	Meaning
+SchemaMismatch	Data structure changed
+MissingColumn	Required field missing
+DataQuality	Data is messy or invalid
+ShapeMismatch	Data size doesn’t match
+ResourceLimit	System ran out of compute or memory
+TrainingInstability	Training became unstable
+ConvergenceFailure	Model failed to converge
+Unknown	Not enough signal to classify
+Philosophy
+
+Rules decide.
+Retrieval only explains.
 
 This keeps the system:
-✔ Predictable  
-✔ Explainable  
-✔ Reliable
+
+Predictable
+
+Explainable
+
+Reliable
