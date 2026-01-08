@@ -133,10 +133,10 @@ where numeric values are required.
 
 
 
-Installation:
+- Installation:
 pip install -r requirements.txt
 
-Usage:
+- Usage:
 python src/main.py
 
 
