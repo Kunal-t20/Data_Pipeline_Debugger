@@ -4,7 +4,7 @@ A lightweight, rule-based debugging tool for machine learning pipelines that det
 
 The goal is to help engineers quickly understand what failed, why it failed, and how to fix it, without relying on black-box AI decisions.
 
-# Problem
+### Problem
 
 Machine learning pipelines frequently fail due to:
 
@@ -71,7 +71,7 @@ Log File
 ```
 
 
-# Key Components
+## Key Components
 Ingestion
 
 Safely loads log files and handles missing or invalid inputs.
@@ -133,10 +133,10 @@ where numeric values are required.
 
 
 
-## Installation
+Installation:
 pip install -r requirements.txt
 
-## Usage
+Usage:
 python src/main.py
 
 
