@@ -1,0 +1,24 @@
+paths:
+  logs: data/sample_log
+  docs: docs
+
+classification:
+  default_confidence: 0.5
+  unknown_label: "Unknown"
+
+knowledge_base:
+  enabled: true
+  top_k: 2
+  max_chars: 300
+
+analysis:
+  show_root_cause: true
+
+suggestion:
+  enabled: true
+  max_steps: 3
+
+output:
+  show_confidence: true
+  show_stage: true
+  verbose: false
