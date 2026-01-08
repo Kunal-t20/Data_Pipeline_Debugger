@@ -34,6 +34,8 @@ Fail early when schema changes
 
 Add validation tests
 
+
+
 2. MissingColumn
 What it is
 
@@ -92,6 +94,8 @@ Add validation rules
 
 Track data distributions
 
+
+
 4. ShapeMismatch
 What it is
 
@@ -116,6 +120,9 @@ Prevention
 Shape checks in preprocessing
 
 Unit tests for input format
+
+
+
 
 5. ResourceLimit
 What it is
@@ -152,6 +159,8 @@ Resource monitoring
 
 Memory-efficient pipelines
 
+
+
 6. TrainingInstability
 What it is
 
@@ -180,6 +189,8 @@ Prevention
 Training sanity checks
 
 Early alerts on drift
+
+
 
 7. ConvergenceFailure
 What it is
@@ -210,6 +221,8 @@ Baseline models
 
 Training experiment discipline
 
+
+
 8. Unknown
 What it is
 
@@ -234,6 +247,9 @@ Review logs manually
 
 Improve rules later
 
+
+
+
 Summary
 Error Type	Meaning
 SchemaMismatch	Data structure changed
@@ -246,13 +262,3 @@ ConvergenceFailure	Model failed to converge
 Unknown	Not enough signal to classify
 Philosophy
 
-Rules decide.
-Retrieval only explains.
-
-This keeps the system:
-
-Predictable
-
-Explainable
-
-Reliable

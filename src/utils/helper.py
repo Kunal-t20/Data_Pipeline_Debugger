@@ -19,6 +19,6 @@ class ErrorEvent:
             f"Message    : {self.message}\n"
             f"Stacktrace : {self.stacktrace}\n"
             f"Timestamp  : {self.timestamp}\n"
-            f"Source     : {self.source}\n"
-            "---------------------------------\n"
+            f"Source     : {self.source}\n"   
         )
+    
