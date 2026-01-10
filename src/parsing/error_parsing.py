@@ -1,7 +1,7 @@
 import re
 from datetime import datetime
 from typing import Optional
-from utils.helper import ErrorEvent
+from src.utils.helper import ErrorEvent
 
 
 VALUE_ERROR_RE = re.compile(r"ValueError[: ]+(.*)")

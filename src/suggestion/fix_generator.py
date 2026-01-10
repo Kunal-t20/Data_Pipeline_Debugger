@@ -1,4 +1,4 @@
-from utils.helper import ErrorEvent
+from src.utils.helper import ErrorEvent
 from typing import List
 
 FIX_GENERATOR_MAP={

@@ -1,6 +1,6 @@
 from typing import Dict
-from classification.rule import rule_based_classification
-from utils.helper import ErrorEvent
+from src.classification.rule import rule_based_classification
+from src.utils.helper import ErrorEvent
 
 
 def classify_error(event: ErrorEvent) -> Dict:

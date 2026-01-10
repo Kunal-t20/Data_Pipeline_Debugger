@@ -1,7 +1,7 @@
 import logging
 from pathlib import Path
 from typing import Optional, Tuple
-from utils.helper import ErrorEvent
+from src.utils.helper import ErrorEvent
 
 
 logger = logging.getLogger(__name__)

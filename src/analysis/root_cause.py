@@ -1,4 +1,4 @@
-from utils.helper import ErrorEvent
+from src.utils.helper import ErrorEvent
 ROOT_CAUSE_MAP={
     "SchemaMismatch": (
         "Input data structure or data type does not match what the model "
