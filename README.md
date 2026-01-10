@@ -47,6 +47,7 @@ Log File
   → Suggestions
 
 ## Project Structure
+
 .
 ├── config/
 │   └── setting.yaml
