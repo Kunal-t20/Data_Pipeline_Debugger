@@ -46,7 +46,7 @@ Log File
   → Knowledge Base Retrieval (HOW to fix)
   → Suggestions
 
-### Project Structure
+## Project Structure
 .
 ├── config/
 │   └── setting.yaml
