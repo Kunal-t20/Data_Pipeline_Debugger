@@ -2,7 +2,7 @@
 
 A lightweight, rule-based debugging tool for machine learning pipelines that detects, classifies, and explains common ML failures using structured logs and a knowledge base.
 
-The goal is to help engineers quickly understand what failed, why it failed, and how to fix it, without relying on black-box AI decisions.
+The goal is to help engineers quickly understand what failed, why it failed, and how to fix it — without relying on black-box AI decisions.
 
 ### Problem
 
@@ -37,7 +37,7 @@ The system avoids guessing when confidence is low
 
 This keeps the debugger predictable, explainable, and reliable.
 
-## High-Level Flow
+### High-Level Flow
 Log File
   → Ingestion
   → Parsing
@@ -46,9 +46,7 @@ Log File
   → Knowledge Base Retrieval (HOW to fix)
   → Suggestions
 
-## Project Structure
-
-```
+### Project Structure
 .
 ├── config/
 │   └── setting.yaml
@@ -68,19 +66,17 @@ Log File
 ├── tests/
 ├── requirements.txt
 └── README.md
-```
-
 
 ## Key Components
-Ingestion
+- Ingestion
 
 Safely loads log files and handles missing or invalid inputs.
 
-Parsing
+- Parsing
 
 Converts raw logs into structured error events.
 
-Classification
+- Classification
 
 Uses rule-based logic to categorize errors such as:
 
@@ -100,7 +96,7 @@ ConvergenceFailure
 
 Unknown
 
-Root Cause Analysis
+- Root Cause Analysis
 
 Explains why the error likely occurred in plain language.
 
@@ -114,9 +110,9 @@ FAISS for similarity search
 
 This layer supports explanation only and never affects decisions.
 
-Suggestions
+- Suggestions
 
-Provides short, actionable steps to fix the issue.
+#### Provides short, actionable steps to fix the issue.
 
 Example Output
 Category   : SchemaMismatch
@@ -131,12 +127,10 @@ The structure of the data is different from what the pipeline expects.
 This usually happens when column types change or categorical values appear
 where numeric values are required.
 
-
-
-- Installation:
+- Installation
 pip install -r requirements.txt
 
-- Usage:
+- Usage
 python src/main.py
 
 
@@ -144,7 +138,7 @@ Log paths and document paths can be updated in main.py or moved to configuration
 
 Design Decisions
 
-Rule-based classification instead of LLM decisions
+Rule-based classification instead of LLM-driven decisions
 
 Retrieval used only for explanation, not control
 
@@ -154,8 +148,7 @@ Minimal dependencies
 
 CLI-first design
 
-
-## Future Improvements
+Future Improvements
 
 CLI arguments for log paths
 
@@ -166,3 +159,8 @@ MLflow integration
 Improved suggestion engine
 
 Web or API interface
+
+#### Final note
+
+This project focuses on trust, determinism, and explainability over automation and guesswork.
+It is designed to behave like a reliable debugging tool, not a conversational assistant.
