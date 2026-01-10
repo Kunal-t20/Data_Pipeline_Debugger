@@ -48,6 +48,7 @@ Log File
 
 ## Project Structure
 
+```
 .
 ├── config/
 │   └── setting.yaml
@@ -67,6 +68,7 @@ Log File
 ├── tests/
 ├── requirements.txt
 └── README.md
+```
 
 
 ## Key Components
