@@ -131,14 +131,44 @@ The structure of the data is different from what the pipeline expects.
 This usually happens when column types change or categorical values appear
 where numeric values are required.
 
+#### Setup
+
+- Virtual Environment
+```
+python -m venv venv
+venv\Scripts\activate
+```
 - Installation
+```
 pip install -r requirements.txt
+```
 
 - Usage
+> Run via FastAPI (Recommended)
+```
+uvicorn src.api.app:app --reload
+```
+
+- Open:
+```
+Swagger UI → http://127.0.0.1:8000/docs
+
+Health Check → http://127.0.0.1:8000/health
+```
+
+- Supports:
+
+Debugging from raw log text
+
+Debugging from log files
+
+- Run via CLI (Optional)
+```
 python src/main.py
+```
 
 
-Log paths and document paths can be updated in main.py or moved to configuration later.
+Useful for quick local testing or scripting.
 
 Design Decisions
 
@@ -150,7 +180,7 @@ Modular, layered architecture
 
 Minimal dependencies
 
-CLI-first design
+API-first with CLI support
 
 Future Improvements
 
@@ -162,9 +192,10 @@ MLflow integration
 
 Improved suggestion engine
 
-Web or API interface
+Authentication & rate limiting for API
 
-#### Final note
+#### Note
 
 This project focuses on trust, determinism, and explainability over automation and guesswork.
 It is designed to behave like a reliable debugging tool, not a conversational assistant.
+
