@@ -1,10 +1,11 @@
-from ingestion.log_loader import load_logs
-from parsing.error_parsing import parse_error
-from classification.classifier import classify_error
-from knowledge_base.document import load_all_doc
-from knowledge_base.vector_store import VectorStore
-from analysis.root_cause import analyze_root_cause
-from suggestion.fix_generator import generate_fix
+from src.ingestion.log_loader import load_logs
+from src.parsing.error_parsing import parse_error
+from src.classification.classifier import classify_error
+from src.knowledge_base.document import load_all_doc
+from src.knowledge_base.vector_store import VectorStore
+from src.analysis.root_cause import analyze_root_cause
+from src.suggestion.fix_generator import generate_fix
+
 
 
 LOG_PATH = r"F:\projects\Data_Pipeline_Debugger\data\sample_log\error1.log"

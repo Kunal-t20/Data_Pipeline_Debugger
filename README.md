@@ -164,7 +164,7 @@ Debugging from log files
 
 - Run via CLI (Optional)
 ```
-python src/main.py
+python -m src.main
 ```
 
 
