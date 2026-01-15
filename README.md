@@ -162,7 +162,7 @@ Debugging from raw log text
 
 Debugging from log files
 
-- Run via CLI (Optional)
+> Run via CLI (Optional)
 ```
 python -m src.main
 ```
